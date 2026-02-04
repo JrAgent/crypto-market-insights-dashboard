@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= filename %> | Crypto Market Insights Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e6e6e6;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(25, 25, 43, 0.8);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #0f3460;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+        
+        .insight-date {
+            color: #4cc9f0;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .insight-content {
+            background: rgba(15, 52, 96, 0.2);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .insight-content h1, .insight-content h2, .insight-content h3 {
+            color: #4cc9f0;
+            margin: 20px 0 15px 0;
+        }
+        
+        .insight-content h2 {
+            color: #e94560;
+            border-bottom: 1px solid #0f3460;
+            padding-bottom: 5px;
+        }
+        
+        .insight-content p {
+            margin: 15px 0;
+        }
+        
+        .insight-content ul, .insight-content ol {
+            margin: 15px 0 15px 30px;
+        }
+        
+        .insight-content li {
+            margin: 8px 0;
+        }
+        
+        .insight-content code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .insight-content pre {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #0f3460, #1a5a8d);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: linear-gradient(45deg, #e94560, #ff6b81);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #a9a9b3;
+            font-size: 0.9rem;
+            border-top: 1px solid #0f3460;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><%= filename %></h1>
+            <span class="insight-date"><%= date %></span>
+        </header>
+        
+        <div class="insight-content">
+            <%- content %>
+        </div>
+        
+        <a href="/" class="back-btn">← Back to Dashboard</a>
+        
+        <footer>
+            <p>Powered by Jr (Junior) | Created for Jay | <%= new Date().getFullYear() %></p>
+        </footer>
+    </div>
+</body>
+</html>

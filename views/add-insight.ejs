@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Market Insight | Crypto Market Insights Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e6e6e6;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(25, 25, 43, 0.8);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #0f3460;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4cc9f0;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #4cc9f0;
+            background: rgba(15, 52, 96, 0.3);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            height: 200px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(15, 52, 96, 0.2);
+            border-radius: 6px;
+        }
+        
+        .checkbox-item {
+            margin: 10px 0;
+        }
+        
+        .checkbox-item input {
+            margin-right: 10px;
+        }
+        
+        .checkbox-item label {
+            display: inline;
+            margin: 0;
+            font-weight: normal;
+            color: #e6e6e6;
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(45deg, #0f3460, #1a5a8d);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #e94560, #ff6b81);
+        }
+        
+        .back-btn {
+            background: linear-gradient(45deg, #4a4a6a, #6a6a8a);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .back-btn:hover {
+            background: linear-gradient(45deg, #6a6a8a, #8a8a9a);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #a9a9b3;
+            font-size: 0.9rem;
+            border-top: 1px solid #0f3460;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Add New Market Insight</h1>
+            <p>Document your research and analysis for the dashboard</p>
+        </header>
+        
+        <form action="/api/add-insight" method="POST">
+            <div class="form-group">
+                <label for="title">Title *</label>
+                <input type="text" id="title" name="title" required placeholder="Enter a descriptive title">
+            </div>
+            
+            <div class="form-group">
+                <label for="date">Date *</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="memecoin">Memecoin Analysis</option>
+                    <option value="defi">DeFi Opportunities</option>
+                    <option value="rwa">Real World Assets (RWA)</option>
+                    <option value="base">Base Chain Ecosystem</option>
+                    <option value="solana">Solana Ecosystem</option>
+                    <option value="ethereum">Ethereum Ecosystem</option>
+                    <option value="ai">AI Agent Tokens</option>
+                    <option value="100x-opportunity">100x Opportunity</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="content">Main Content *</label>
+                <textarea id="content" name="content" required placeholder="Enter your analysis, research findings, and insights..."></textarea>
+            </div>
+            
+            <div class="checkbox-group">
+                <h3>100x Opportunity Checklist</h3>
+                <p>Select the patterns you've observed:</p>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="narrative_hook" name="patterns" value="narrative_hook">
+                    <label for="narrative_hook">Clear narrative/hook that resonates with community</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="high_volume" name="patterns" value="high_volume">
+                    <label for="high_volume">High volume-to-market-cap ratio indicating interest</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="community_active" name="patterns" value="community_active">
+                    <label for="community_active">Active community engagement on social platforms</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="cross_chain" name="patterns" value="cross_chain">
+                    <label for="cross_chain">Cross-chain connections or integrations</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="established_team" name="patterns" value="established_team">
+                    <label for="established_team">Connection to established projects/teams</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="utility_beyond_meme" name="patterns" value="utility_beyond_meme">
+                    <label for="utility_beyond_meme">Utility beyond pure meme appeal</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="compound_narrative" name="patterns" value="compound_narrative">
+                    <label for="compound_narrative">Combines multiple trending narratives</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" placeholder="Any additional thoughts, risks, or follow-up items..."></textarea>
+            </div>
+            
+            <div class="btn-container">
+                <button type="submit" class="submit-btn">Save Insight</button>
+                <br>
+                <a href="/" class="back-btn">← Back to Dashboard</a>
+            </div>
+        </form>
+        
+        <footer>
+            <p>Powered by Jr (Junior) | Created for Jay | <%= new Date().getFullYear() %></p>
+        </footer>
+    </div>
+</body>
+</html>
