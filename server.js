@@ -19,7 +19,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Utility function to read and convert Markdown to HTML
 async function readMarkdownFile(filePath) {
     try {
-        const fullPath = path.join(DATA_ROOT, filePath);
+        // Vercel deployment often flattens data file paths. We strip any folder prefix 
+    // to ensure we look for the file in the Lambda root.
+    const cleanFilePath = path.basename(filePath); 
+    const fullPath = path.join(DATA_ROOT, cleanFilePath);
         const content = await readFile(fullPath, 'utf-8');
         return marked(content);
     } catch (error) {
