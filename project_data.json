@@ -13,6 +13,7 @@
     "realest_club": {
       "name": "The Realest Club",
       "todos": [
+        {"task": "Meeting with The Realest Club (10am)", "completed": false},
         {"task": "Draft community poll", "completed": false},
         {"task": "Plan next AMA session", "completed": true}
       ],
