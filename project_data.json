@@ -7,7 +7,7 @@
         {"task": "Secure early feedback loop", "completed": false}
       ],
       "research": [
-        {"title": "Latest ETH L2 gas trends", "date": "2026-02-04", "file": "research/ohana_l2_trends.md"}
+        {"title": "Latest ETH L2 gas trends", "date": "2026-02-04", "file": "ohana_l2_trends.md"}
       ]
     },
     "realest_club": {
@@ -18,7 +18,7 @@
         {"task": "Plan next AMA session", "completed": true}
       ],
       "research": [
-        {"title": "Best practices for token gating on Telegram", "date": "2026-02-03", "file": "research/realest_club_token_gating.md"}
+        {"title": "Best practices for token gating on Telegram", "date": "2026-02-03", "file": "realest_club_token_gating.md"}
       ]
     },
     "youtube_content": {
@@ -28,7 +28,7 @@
         {"task": "Design thumbnail for Base agents video", "completed": false}
       ],
       "research": [
-        {"title": "Sentiment on CLAWNCH, CLAWD, MOLT", "date": "2026-02-05", "file": "memory/2026-02-05.md"}
+        {"title": "Sentiment on CLAWNCH, CLAWD, MOLT", "date": "2026-02-05", "file": "2026-02-05.md"}
       ]
     },
     "100x_research": {
@@ -38,7 +38,7 @@
         {"task": "Investigate MOONBASE contract details", "completed": false}
       ],
       "research": [
-        {"title": "Top 3 Base memecoin opportunities identified", "date": "2026-02-05", "file": "daily_brief_2026-02-05.md"}
+        {"title": "Emerging ZK & Deflationary Gaming Tokens (NIGHT/BEAT)", "date": "2026-02-06", "file": "100x_emerging_gaming_ai_tokens.md"}
       ]
     }
   },
