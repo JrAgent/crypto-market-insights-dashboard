@@ -58,8 +58,8 @@ app.get('/api/project-data', async (req, res) => {
 // --- Dashboard Route (Serves the main HTML file) ---
 
 app.get('/', (req, res) => {
-    // Render the main dashboard file
-    res.render('dashboard');
+    // Directly send the dashboard.html file
+    res.sendFile(path.join(__dirname, 'dashboard.html'));
 });
 
 // For Vercel deployment: export the app
