@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Insights Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> <!-- Placeholder for icons -->
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar (Dashify Style) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-claw"></i> OpenClaw
+            </div>
+            <a href="#overview" class="nav-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#projects" class="nav-item"><i class="fas fa-rocket"></i> Projects</a>
+            <div class="divider"></div>
+            <!-- Project Navigation (Will be dynamically populated by script.js) -->
+            <a href="#ohana" class="nav-item">Ohana</a>
+            <a href="#realest-club" class="nav-item">The Realest Club</a>
+            <a href="#youtube" class="nav-item">YouTube Content</a>
+            <a href="#100x-research" class="nav-item">100x Research</a>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Header with time display -->
+            <header class="dashboard-header">
+                <div class="time-display">
+                    <h1 id="current-time">Loading time...</h1>
+                    <p id="current-date">Loading date...</p>
+                </div>
+            </header>
+
+            <!-- Top Insights Grid (Daily Brief + AI Ideas) -->
+            <section class="top-insights-grid cards-grid">
+                
+                <!-- Daily Brief Card -->
+                <div class="daily-brief-card section-card">
+                    <h2>Daily Brief</h2>
+                    <div id="daily-brief-content" class="content-area">
+                        <p>Loading the latest market brief...</p>
+                    </div>
+                </div>
+
+                <!-- AI Ideas / Suggestions Card -->
+                <div id="ai-ideas-card" class="ai-ideas-card section-card">
+                    <h2>AI Suggestions</h2>
+                    <!-- Content will be populated by script.js -->
+                    <div class="content-area">
+                        <p>Loading suggestions...</p>
+                    </div>
+                </div>
+
+            </section>
+            
+            <!-- Project Cards Section -->
+            <section id="projects" class="projects-section">
+                <h2>Project Cards</h2>
+                <div id="project-cards-container" class="cards-grid">
+                    
+                    <!-- Ohana Card -->
+                    <div id="ohana-card" class="card">
+                        <h3>Ohana</h3>
+                        <div class="project-card-content">
+                            <div class="todo-list">
+                                <h4>To-Do List</h4>
+                                <!-- To-Do items will be populated by script.js -->
+                                <div class="todo-item"><input type="checkbox" disabled> Define next milestone</div>
+                            </div>
+                            <div class="research-feed">
+                                <h4>Proactive Research</h4>
+                                <!-- Research items will be populated by script.js -->
+                                <div class="research-item">No recent research found.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- The Realest Club Card -->
+                    <div id="realest-club-card" class="card">
+                        <h3>The Realest Club</h3>
+                        <div class="project-card-content">
+                            <div class="todo-list">
+                                <h4>To-Do List</h4>
+                                <div class="todo-item"><input type="checkbox" disabled> Draft community poll</div>
+                            </div>
+                            <div class="research-feed">
+                                <h4>Proactive Research</h4>
+                                <div class="research-item">No recent research found.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Content Card -->
+                    <div id="youtube-card" class="card">
+                        <h3>YouTube Content</h3>
+                        <div class="project-card-content">
+                            <div class="todo-list">
+                                <h4>To-Do List</h4>
+                                <div class="todo-item"><input type="checkbox" disabled> Outline next 3 videos</div>
+                            </div>
+                            <div class="research-feed">
+                                <h4>Proactive Research</h4>
+                                <div class="research-item">Sentiment on Base meme tokens is positive. <span class="research-date">Feb 5</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 100x Research Card (Crypto Scanner) -->
+                    <div id="100x-research-card" class="card">
+                        <h3>100x Research</h3>
+                        <div class="project-card-content">
+                            <div class="todo-list">
+                                <h4>To-Do List</h4>
+                                <div class="todo-item"><input type="checkbox" disabled> Finalize scanning parameters</div>
+                            </div>
+                            <div class="research-feed">
+                                <h4>Proactive Research</h4>
+                                <div class="research-item">CLAWNCH, CLAWD, MOLT identified as key opportunities. <span class="research-date">Feb 5</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

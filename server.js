@@ -4,8 +4,17 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { marked } from 'marked';
 
-// Use Vercel's preferred way to resolve paths to bundled files
-const DATA_ROOT = process.cwd();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Use __dirname for static files, but process.cwd() is safer for Vercel data files
+const DATA_ROOT = process.cwd(); 
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Serve static files from the public directory (for dashboard.html, styles.css, script.js)
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Utility function to read and convert Markdown to HTML
 async function readMarkdownFile(filePath) {
@@ -19,14 +28,14 @@ async function readMarkdownFile(filePath) {
     }
 }
 
-// ...
+// --- API Endpoints ---
+
 // API 1: Get Daily Brief Content
 app.get('/api/daily-brief', async (req, res) => {
     // The daily brief is saved with today's date
     const today = new Date().toISOString().slice(0, 10);
     const briefPath = `daily_brief_${today}.md`; 
     
-    // In this simulation, we'll use the file we just created
     const htmlContent = await readMarkdownFile(briefPath);
     
     res.json({ content: htmlContent });
@@ -35,7 +44,7 @@ app.get('/api/daily-brief', async (req, res) => {
 // API 2: Get All Project Data (To-Dos, Research, AI Suggestions)
 app.get('/api/project-data', async (req, res) => {
     try {
-        const dataPath = 'project_data.json'; // Simpler pathing from root
+        const dataPath = 'project_data.json'; 
         const data = await readFile(path.join(DATA_ROOT, dataPath), 'utf-8');
         const projectData = JSON.parse(data);
 
@@ -58,8 +67,8 @@ app.get('/api/project-data', async (req, res) => {
 // --- Dashboard Route (Serves the main HTML file) ---
 
 app.get('/', (req, res) => {
-    // Directly send the dashboard.html file
-    res.sendFile(path.join(__dirname, 'dashboard.html'));
+    // Directly send the dashboard.html file from the public directory
+    res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
 });
 
 // For Vercel deployment: export the app

@@ -2,6 +2,10 @@
   "version": 2,
   "builds": [
     {
+      "src": "public/**",
+      "use": "@vercel/static"
+    },
+    {
       "src": "server.js",
       "use": "@vercel/node"
     }
@@ -13,16 +17,14 @@
     },
     {
       "src": "/(.*)",
-      "dest": "server.js"
+      "dest": "/public/dashboard.html"
     }
   ],
   "files": [
     "package.json",
     "package-lock.json",
     "server.js",
-    "styles.css",
-    "script.js",
-    "dashboard.html",
+    "public/**",
     "daily_brief_2026-02-05.md",
     "daily_brief_2026-02-06.md",
     "project_data.json",
