@@ -1,0 +1,327 @@
+/* Modern Dashboard Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Darker background */
+    color: #f0f0f0;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Two main columns for nav and content */
+    gap: 30px;
+}
+
+/* New Nav-bar styles (left column) */
+.sidebar {
+    background-color: #1e1e1e; /* Sidebar background */
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #008080; /* Teal Accent */
+    margin-bottom: 40px;
+}
+
+.nav-item {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: #a0a0a0;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-item:hover {
+    background-color: #1a1a1a;
+    color: #008080; /* Teal Accent */
+}
+
+.nav-item.active {
+    background-color: #008080; /* Active teal background */
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 128, 128, 0.5);
+}
+
+/* Content Column */
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.dashboard-header {
+    background: rgba(255, 255, 255, 0.05); /* Glass-morphism effect */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.time-display h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #008080; /* Teal Accent */
+    text-shadow: 0 0 5px rgba(0, 128, 128, 0.5);
+}
+
+.time-display p {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+/* Section Styles - Adopting the glass-morphism card style for all sections */
+section, .section-card {
+    background: #1e1e1e; /* Darker card background */
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: none; /* Removing the explicit border */
+    transition: box-shadow 0.3s ease;
+}
+
+section:hover, .section-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    font-weight: 500;
+}
+
+/* Heatmap Container */
+.heatmap-container {
+    height: 400px;
+    position: relative;
+    background-color: #1e1e1e; /* Consistent with card background */
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#cryptoChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Content Area for Daily Brief */
+.content-area {
+    min-height: 150px;
+    background: #121212; /* Very dark background for content area */
+    border-radius: 10px;
+    padding: 20px;
+    line-height: 1.6;
+    color: #d0d0d0;
+    overflow-y: auto;
+    max-height: 400px; /* Limit height for a clean look */
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #282828; /* Slightly lighter card background for contrast */
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    background: #333333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #008080; /* Teal Accent */
+    font-weight: 600;
+}
+
+.card .price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #f0f0f0;
+}
+
+.card .change {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.change.positive {
+    color: #4ade80; /* Green for positive */
+}
+
+.change.negative {
+    color: #f87171; /* Red for negative */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        grid-template-columns: 1fr; /* Stack sidebar and content */
+    }
+    .sidebar {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .time-display h1 {
+        font-size: 2.5rem;
+    }
+    
+    section, .section-card, .dashboard-header {
+        padding: 20px;
+    }
+    
+    .heatmap-container {
+        height: 300px;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #008080; /* Teal spinner */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* New: Project-specific card styles (Todo/Research inside card) */
+.project-card-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.todo-list, .research-feed {
+    background-color: #121212;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.todo-list h4, .research-feed h4 {
+    color: #008080; /* Teal Accent */
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+.todo-item input[type=\"checkbox\"] {
+    margin-right: 10px;
+    accent-color: #008080;
+}
+
+.research-item {
+    border-bottom: 1px dashed #282828;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.research-item a {
+    color: #00cccc;
+    text-decoration: none;
+}
+
+.research-item a:hover {
+    text-decoration: underline;
+}
+
+.research-date {
+    display: block;
+    font-size: 0.75rem;
+    color: #555;
+    margin-top: 2px;
+}
+
+.ai-ideas-card {
+    grid-column: 1 / -1; /* Span full width in the grid */
+    background: #282828;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ai-ideas-card h3 {
+    color: #008080;
+}
+
+.ai-idea-item {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-left: 3px solid #008080;
+    background-color: #121212;
+    border-radius: 5px;
+}
+
+.ai-idea-item p {
+    margin: 0;
+    font-size: 0.95rem;
+}

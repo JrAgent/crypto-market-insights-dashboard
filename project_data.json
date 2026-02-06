@@ -1,0 +1,49 @@
+{
+  "projects": {
+    "ohana": {
+      "name": "Ohana",
+      "todos": [
+        {"task": "Define next milestone", "completed": false},
+        {"task": "Secure early feedback loop", "completed": false}
+      ],
+      "research": [
+        {"title": "Latest ETH L2 gas trends", "date": "2026-02-04", "file": "research/ohana_l2_trends.md"}
+      ]
+    },
+    "realest_club": {
+      "name": "The Realest Club",
+      "todos": [
+        {"task": "Draft community poll", "completed": false},
+        {"task": "Plan next AMA session", "completed": true}
+      ],
+      "research": [
+        {"title": "Best practices for token gating on Telegram", "date": "2026-02-03", "file": "research/realest_club_token_gating.md"}
+      ]
+    },
+    "youtube_content": {
+      "name": "YouTube Content",
+      "todos": [
+        {"task": "Outline next 3 videos", "completed": false},
+        {"task": "Design thumbnail for Base agents video", "completed": false}
+      ],
+      "research": [
+        {"title": "Sentiment on CLAWNCH, CLAWD, MOLT", "date": "2026-02-05", "file": "memory/2026-02-05.md"}
+      ]
+    },
+    "100x_research": {
+      "name": "100x Research",
+      "todos": [
+        {"task": "Finalize scanning parameters", "completed": false},
+        {"task": "Investigate MOONBASE contract details", "completed": false}
+      ],
+      "research": [
+        {"title": "Top 3 Base memecoin opportunities identified", "date": "2026-02-05", "file": "daily_brief_2026-02-05.md"}
+      ]
+    }
+  },
+  "ai_suggestions": [
+    {"topic": "Productivity", "suggestion": "Block 2 hours of deep work daily for critical coding tasks."},
+    {"topic": "Health", "suggestion": "Integrate a 15-minute walk after every major coding session."},
+    {"topic": "Content Idea", "suggestion": "Script a short video analyzing the 'Meme + Utility' trend on Base chain, using MOLT as a case study."}
+  ]
+}

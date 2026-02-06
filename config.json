@@ -1,0 +1,26 @@
+{
+  "api": {
+    "dailyBriefEndpoint": "/api/daily-brief",
+    "insightsEndpoint": "/api/market-insights",
+    "cryptoDataEndpoint": "/api/crypto-data",
+    "projectCardsEndpoint": "/api/project-cards"
+  },
+  "settings": {
+    "refreshInterval": 30000,
+    "dateFormat": "en-US",
+    "timeFormat": "12h",
+    "theme": "dark"
+  },
+  "cryptoSymbols": [
+    "BTC",
+    "ETH",
+    "SOL",
+    "ADA",
+    "DOT",
+    "AVAX",
+    "MATIC",
+    "LINK",
+    "DOGE",
+    "SHIB"
+  ]
+}

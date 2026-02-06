@@ -1,0 +1,28 @@
+# Hourly Scan Results: Base Memecoins 1-5 Days Old with Increasing Volume and Positive Sentiment
+
+## Summary of Findings (February 4, 2026):
+
+### Notable Recent Developments:
+
+1. **$MOLT and $MOLTBOOK** - These memecoins related to Moltbook have surged more than 7,000% recently as mentioned in a CoinDesk article from 3 days ago. They're tied to an AI-invented digital religion called Crustafarianism and an AI agents' social network. This indicates significant recent interest and volume increase.
+
+2. **Russell (RUSSELL)** - A character-led memecoin on Base inspired by the real-life Akita Inu owned by Brian Armstrong. This coin has been gaining traction in early 2026.
+
+3. **General Market Trends**:
+   - The memecoin market cap has surged from $38B to $45B in early January 2026, driven by renewed retail participation
+   - Memecoin mentions and related hashtags rose ~53% from January 2024 to 2025, indicating strong community engagement
+   - There's been increased activity in Base chain memecoins with daily launches and significant price movements
+
+### Key Observations:
+- Most of the highest-profile Base memecoins (like PONKE, TOSHI, BRETT, DEGEN) seem to be older than our 1-5 day window, having been launched months ago
+- However, niche memecoins like $MOLT and $MOLTBOOK show the type of explosive growth (7,000%+) that fits our criteria of "increasing volume and positive sentiment"
+- The AI agents' social network theme represents an "interesting" and "game changer" type narrative that's attracting attention
+- Sentiment analysis tools show that viral memes, influencer posts, and coordinated campaigns can trigger 20%+ price moves within hours
+
+### Risk Factors:
+- About 1 in 6 newly launched Base memecoins is reportedly a scam
+- 90.8% of analyzed tokens have at least one security vulnerability
+- High volatility and potential for rug pulls in newer tokens
+
+### Recommendation:
+Monitor $MOLT and $MOLTBOOK closely as they appear to fit the criteria of recent interest with substantial volume increase. However, exercise caution due to the high-risk nature of very new memecoins.
