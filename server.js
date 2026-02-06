@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Serve static files from the public directory (for dashboard.html, styles.css, script.js)
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public'))); // Removed for Vercel best practice
 
 // Utility function to read and convert Markdown to HTML
 async function readMarkdownFile(filePath) {
@@ -70,8 +70,7 @@ app.get('/api/project-data', async (req, res) => {
 // --- Dashboard Route (Serves the main HTML file) ---
 
 app.get('/', (req, res) => {
-    // Directly send the dashboard.html file from the public directory
-    res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+    res.status(404).send('Not Found');
 });
 
 // For Vercel deployment: export the app
