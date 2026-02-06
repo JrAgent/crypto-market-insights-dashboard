@@ -4,34 +4,22 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { marked } from 'marked';
 
-// Use __dirname equivalent for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Set EJS as the view engine
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-// Serve static files from the root directory (for styles.css, script.js, dashboard.html, etc.)
-app.use(express.static(__dirname));
+// Use Vercel's preferred way to resolve paths to bundled files
+const DATA_ROOT = process.cwd();
 
 // Utility function to read and convert Markdown to HTML
 async function readMarkdownFile(filePath) {
     try {
-        const fullPath = path.join(__dirname, filePath);
+        const fullPath = path.join(DATA_ROOT, filePath);
         const content = await readFile(fullPath, 'utf-8');
         return marked(content);
     } catch (error) {
-        console.error(`Error reading or converting file ${filePath}:`, error.message);
-        return `<p class="error-message">Could not load content for ${filePath}. File not found.</p>`;
+        console.error(`Error reading or converting file ${filePath} at path ${fullPath}:`, error.message);
+        return `<p class="error-message">Could not load content for ${filePath}. File not found at ${fullPath}.</p>`;
     }
 }
 
-// --- API Endpoints ---
-
+// ...
 // API 1: Get Daily Brief Content
 app.get('/api/daily-brief', async (req, res) => {
     // The daily brief is saved with today's date
@@ -47,8 +35,8 @@ app.get('/api/daily-brief', async (req, res) => {
 // API 2: Get All Project Data (To-Dos, Research, AI Suggestions)
 app.get('/api/project-data', async (req, res) => {
     try {
-        const dataPath = path.join(__dirname, 'project_data.json');
-        const data = await readFile(dataPath, 'utf-8');
+        const dataPath = 'project_data.json'; // Simpler pathing from root
+        const data = await readFile(path.join(DATA_ROOT, dataPath), 'utf-8');
         const projectData = JSON.parse(data);
 
         // For each research entry, we need to read the markdown content and include it
